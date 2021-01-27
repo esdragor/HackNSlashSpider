@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1168555088
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8be05bae8733187cbf374fd80ce2c131
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 51a16e16d5113854a16091e54ae5bb0d
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/PilotMat.mat
+- Assets/KartingMat.mat
+Dependencies: []

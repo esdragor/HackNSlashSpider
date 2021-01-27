@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 1308345361
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: kartmat
+      Dependencies: {}
