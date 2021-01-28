@@ -9,6 +9,7 @@ public struct infosConnect
 {
     public string GamerID;
     public string gamerSecret;
+    public Gamer gamerSetup;
 }
 
 public class Login : MonoBehaviour
@@ -49,13 +50,7 @@ public class Login : MonoBehaviour
 
                 ConnectionParameters.GamerID = gamer.GamerId;
                 ConnectionParameters.gamerSecret = gamer.GamerSecret;
-
-                //    int ptr1 = infos.IndexOf("gamer_id");
-                //string cutstr = infos.Substring(ptr1, infos.Length - ptr1);
-                //    int ptr2 = cutstr.IndexOf(",");
-
-                //    Debug.Log("\n\nPOIRE:\n" + infos.Substring(ptr1, ptr2));
-
+                ConnectionParameters.gamerSetup = gamer;
 
                 SceneManager.LoadScene("SampleScene");
 

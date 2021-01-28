@@ -67,8 +67,8 @@ namespace KartGame.Track
         public Object initialRacer;
 
         List<Action> m_DisplayCalls = new List<Action>();
-        IRacer m_Racer;
-        StringBuilder m_StringBuilder = new StringBuilder(0, 300);
+        public IRacer m_Racer;
+        public StringBuilder m_StringBuilder = new StringBuilder(0, 300);
 
         void Awake()
         {
@@ -132,7 +132,6 @@ namespace KartGame.Track
         {
             List<float> lapTimes = m_Racer.GetLapTimes();
             int lapTotal = trackManager.raceLapTotal;
-
             for (int i = 0; i < lapTotal; i++)
             {
                 m_StringBuilder.Append("Lap ");
@@ -164,6 +163,7 @@ namespace KartGame.Track
                 m_StringBuilder.Append(lapTimes[i].ToString(".##"));
                 m_StringBuilder.Append('\n');
             }
+
         }
 
         void DisplayFinishedAndCurrentLapTimes()
@@ -178,6 +178,7 @@ namespace KartGame.Track
                 m_StringBuilder.Append('\n');
             }
 
+            int lapTotal = trackManager.raceLapTotal;
             float currentLapTime = m_Racer.GetLapTime();
             if (Mathf.Approximately(currentLapTime, 0f))
                 return;

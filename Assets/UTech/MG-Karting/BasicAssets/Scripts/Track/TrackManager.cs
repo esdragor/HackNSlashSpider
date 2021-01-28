@@ -28,6 +28,7 @@ namespace KartGame.Track
         TrackRecord m_HistoricalBestRace;
 
         public bool IsRaceRunning => m_IsRaceRunning;
+        public TimeDisplay TimeScript;
 
         /// <summary>
         /// Returns the best lap time recorded this session.  If no record is found, -1 is returned.
@@ -208,6 +209,18 @@ namespace KartGame.Track
 
                         racer.DisableControl ();
                         racer.PauseTimer ();
+                        ///////////////////////////////////////////////////////
+                        List<float> lapTimes = TimeScript.m_Racer.GetLapTimes();
+
+                        float TotalCourse = 0.0f;
+
+                        for (int i = 0; i < lapTimes.Count; i++)
+                        {
+                            TotalCourse += lapTimes[i];
+                        }
+                        TotalCourse += TimeScript.m_Racer.GetLapTime();
+
+                        FindObjectOfType<Leaderboard>().PostScore((long)TotalCourse);
                     }
                 }
 
