@@ -120,6 +120,10 @@ namespace KartGame.Track
                 m_RacerNextCheckpoints.Add (racer, checkpoints[0]);
                 racer.DisableControl ();
             }
+
+
+            FindObjectOfType<Login>().GetUserValue("nbGames");
+
         }
 
         /// <summary>
@@ -220,7 +224,10 @@ namespace KartGame.Track
                         }
                         TotalCourse += TimeScript.m_Racer.GetLapTime();
 
+                        ++(FindObjectOfType<Login>().nbRoad);
                         FindObjectOfType<Leaderboard>().PostScore((long)TotalCourse);
+                        FindObjectOfType<Login>().SetUserValue("nbGames", FindObjectOfType<Login>().nbRoad.ToString());
+                        FindObjectOfType<Achievement>().CheckAchievements((long)TotalCourse);
                     }
                 }
 

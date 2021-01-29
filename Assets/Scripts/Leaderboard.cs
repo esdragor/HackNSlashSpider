@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Leaderboard : MonoBehaviour
 {
-    [SerializeField] private Text LeaderboardText;
+    [SerializeField] private Text LeaderboardText = null;
 
     Login loginScript;
     public long Value = -1;
@@ -32,7 +32,6 @@ public class Leaderboard : MonoBehaviour
     public void PostScore(long Score)
     {
         // currentGamer is an object retrieved after one of the different Login functions.
-        Debug.Log("POIIIIIIIIIIRE: " + Value);
         if (Score < Value || Value < 0)
         {
             loginScript.ConnectionParameters.gamerSetup.Scores.Domain("private").Post(Score, "intermediateMode", ScoreOrder.LowToHigh,

@@ -308,6 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mailInput: {fileID: 1058617320}
   PwdInput: {fileID: 2124747543}
+  achieve: 000000
+  nbRoad: 0
 --- !u!1 &1000880997
 GameObject:
   m_ObjectHideFlags: 0
